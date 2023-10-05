@@ -19,6 +19,9 @@ a {
     color: inherit;
     /* blue colors for links too */
     text-decoration: inherit;
+    &:hover{
+        color: unset;
+    }
 }
 
 .header {
@@ -50,7 +53,9 @@ a {
                 display: flex;
                 margin: 0 1.3rem;
                 cursor: pointer;
-
+                &:hover {
+                    opacity: 1;
+                }
                 &.active {
                     opacity: 1;
                 }
@@ -198,7 +203,12 @@ a {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-
+                    &:hover{
+                        .arrow{
+                            transform: translate(5px);
+                            transition: .3s;
+                        }
+                    }
                     .name {
                         color: #DAF97A;
                         font-size: 1rem;
@@ -207,6 +217,7 @@ a {
 
                     .arrow {
                         width: 10px;
+                        transition: .3s;
                         filter: brightness(0) saturate(100%) invert(79%) sepia(67%) saturate(303%) hue-rotate(25deg) brightness(108%) contrast(95%);
                     }
                 }
@@ -529,6 +540,72 @@ a {
                     }
                 }
             }
+        }
+    }
+}
+#detail{
+    color: #515151;
+    background-color: #efefeb;
+    .image{
+        img{
+            width: 90%;
+        }
+    }
+    .detail{
+        margin-top: 10rem;
+    }
+    .title{
+        display: flex;
+        justify-content: space-between;
+        .point{
+            width: 160px;
+        }
+        h3{
+            color: #000;
+        }
+    }
+    .boxAges{
+        display: flex;
+        margin: .5rem 0;
+        .box{
+            padding: .3rem 1rem;
+            border-radius: 5px;
+            background-color: #E1E1F8;
+            color: #4F5EE3;
+            font-size: .8rem;
+            margin-right: .8rem;
+        }
+    }
+    .btn-addCart {
+        background-color: #4F5EE3;
+        color: #fff;
+        padding: .5rem 3rem;
+        border-radius: 50px;
+        border: 2px solid #E1E1F8;
+        transition: .3s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #fff;
+            color: #000;
+            transition: .3s;
+        }
+
+        &.onAdd {
+            background-color: #fff;
+            color: #ccc;
+
+            &:hover {
+                background-color: #D73058;
+                color: #fff;
+                border: 2px solid #D73058;
+            }
+        }
+    }
+    .detail_{
+        .text{
+            color: #969696;
+            word-wrap: break-word;
         }
     }
 }

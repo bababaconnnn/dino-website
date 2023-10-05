@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-5">
+        <div class="image">
+            <img src="./assets/images/{{IMG}}" alt="">
+        </div>
+    </div>
+    <div class="col-7 allDetail">
+        <div class="title">
+            <h3>{{TITLE}}</h3>
+            <div class="point">
+                <img src="./assets/images/point.svg" alt="">
+            </div>
+        </div>
+        <div class="price">
+            <label for="">${{PRICE}} million</label>
+        </div>
+        <div class="Ages my-3">
+            <label for="">Ages</label>
+            <div class="boxAges">
+                <div class="box">
+                    > 100 million years
+                </div>
+                <div class="box">
+                    < 150 million years
+                </div>
+            </div>
+        </div>
+        <div class="detail_ mt-4">
+            <label for="">Detail</label>
+            <hr class="my-2">
+            <div class="text">
+                {{DES}}
+            </div>
+        </div>
+        <button class="btn-addCart mt-4" data-id="{{ID}}" onclick="addCart({{ID}},this)" data-id="">Add to
+            cart</button>
+    </div>
+</div>
