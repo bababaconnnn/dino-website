@@ -1,11 +1,16 @@
 html,
 body {
   font-size: 18px;
-  font-family: 'Inter';
-  background-color: #E5E5E5; }
+  font-family: 'Inter'; }
   html img,
   body img {
     width: 100%; }
+  html#home,
+  body#home {
+    background-color: #E5E5E5; }
+  html#login,
+  body#login {
+    background-color: #191919; }
 
 a {
   color: inherit;
@@ -323,3 +328,72 @@ a {
           background-color: #000;
           color: #DAF97A;
           transition: .3s; }
+
+#login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh; }
+  #login .popup {
+    width: 90%;
+    max-width: 550px;
+    padding: 2rem 1rem;
+    background-color: #fafaf5;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    #login .popup .logo {
+      width: 50%; }
+    #login .popup .content {
+      width: 80%; }
+      #login .popup .content h5 {
+        font-weight: 900; }
+      #login .popup .content .input_ {
+        width: 100%;
+        background-color: red;
+        height: 50px;
+        position: relative;
+        display: flex;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: #F0F0EB;
+        margin: 1.3rem 0; }
+        #login .popup .content .input_ .icon {
+          width: 60px;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          #login .popup .content .input_ .icon img {
+            width: 30%; }
+        #login .popup .content .input_ input {
+          width: calc(100% - 60px);
+          height: 100%;
+          position: absolute;
+          right: 0;
+          top: 0;
+          border: unset;
+          background-color: unset;
+          font-family: 'Roboto', sans-serif; }
+          #login .popup .content .input_ input:focus {
+            outline: none; }
+      #login .popup .content .btn_ {
+        margin-top: 2rem; }
+        #login .popup .content .btn_ button {
+          width: 100%;
+          height: 60px;
+          background-color: #191919;
+          color: #fff;
+          border: 1px solid #191919;
+          border-radius: 30px;
+          transition: .3s; }
+          #login .popup .content .btn_ button:hover {
+            background-color: #fff;
+            color: #191919;
+            cursor: pointer;
+            transition: .3s; }
