@@ -346,18 +346,29 @@ a {
   #login .popup {
     width: 90%;
     max-width: 550px;
-    padding: 2rem 1rem;
+    padding: 8rem 1rem;
     background-color: #fafaf5;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center; }
     #login .popup .logo {
-      width: 50%; }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%; }
+      #login .popup .logo img {
+        width: 40%; }
+      #login .popup .logo label {
+        font-weight: 600;
+        font-size: 14px;
+        padding-top: 0.5rem; }
     #login .popup .content {
-      width: 80%; }
+      width: 80%;
+      margin-top: 3rem; }
       #login .popup .content h5 {
-        font-weight: 900; }
+        font-size: 20px;
+        font-weight: 800; }
       #login .popup .content .input_ {
         width: 100%;
         background-color: red;
@@ -367,7 +378,7 @@ a {
         border-radius: 10px;
         overflow: hidden;
         background-color: #F0F0EB;
-        margin: 1.3rem 0; }
+        margin-top: 1.3rem; }
         #login .popup .content .input_ .icon {
           width: 60px;
           height: 100%;
@@ -405,6 +416,20 @@ a {
             color: #191919;
             cursor: pointer;
             transition: .3s; }
+      #login .popup .content .create p {
+        font-weight: 500;
+        font-size: 0.8rem; }
+        #login .popup .content .create p.bold {
+          font-weight: 700; }
+
+.error-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: red;
+  text-align: end; }
+
+.error-input {
+  border: 2px solid red; }
 
 #detail {
   color: #515151;
