@@ -1,11 +1,13 @@
 <div class="col-3 my-3">
     <div class="item">
-        <div class="title">
-            <div class="name">{{TITLE}}</div>
-            <div class="arrow">
-                <img src="./assets/images/arrow.png" alt="">
+        <a href="detail.html?id={{ID}}">
+            <div class="title">
+                <div class="name">{{TITLE}}</div>
+                <div class="arrow">
+                    <img src="./assets/images/arrow.png" alt="">
+                </div>
             </div>
-        </div>
+        </a>
         <div class="image">
             <div class="bg"></div>
             <div class="img" style="background-image: url('./assets/images/{{IMG}}');"></div>
@@ -16,7 +18,8 @@
             </div>
             <div class="control">
                 <div class="price">{{PRICE}} million $</div>
-                <button class="btn-addCart" data-id="{{IDx}}" onclick="addCart({{ID}},this)" data-id="">Add to cart</button>
+                <button class="btn-addCart" data-id="{{ID}}" onclick="addCart({{ID}},this)" data-id="">Add to
+                    cart</button>
             </div>
         </div>
     </div>
