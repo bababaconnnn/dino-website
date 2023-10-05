@@ -35,7 +35,7 @@
             <label>The first shopping dinosaurs website in the world!</label>
         </div>
         <div class="content">
-            <h5 for="">Sign In</h5>
+            <h5 for="">Sign Up</h5>
             <div class="input_">
                 <div class="icon">
                     <img src="./assets/images/mail.svg" alt="">
@@ -48,13 +48,13 @@
                 </div>
                 <input type="password" placeholder="Password" id="password">
             </div>
-            <p class="error-text mt-2 d-none" for="login"></p>
+            <p class="error-text mt-2 d-none" for="signup"></p>
             <div class="btn_">
-                <button onclick="submit_()">Submit</button>
+                <button onclick="submit_()">Create an Account</button>
             </div>
             <div class="create d-flex align-items-center gap-1 justify-content-center mt-3">
-                <p>If you don't have an account</p>
-                <a href="signup.html"><p class="bold">Create Account!</p></a>
+                <p>have an account</p>
+                <a href="login.html"><p class="bold">Signin Now!</p></a>
             </div>
         </div>
     </div>
@@ -66,54 +66,48 @@
     function submit_() {
         let email = $("#email").val()
         let pass = $("#password").val()
-        if (email != "" && pass != "") {
-            $.ajax({
-                type: "POST",
-                url: "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyC9_Bvk9PVb0cwreWTlGP4k12g7MLU2y5E",
-                contentType: 'application/json',
-                dataType: "json",
-                data: JSON.stringify({
-                    email: email,
-                    password: pass,
-                    returnSecureToken: true
-                }),
-                success: function (data) {
-                    // Check for success or handle error
-                    if (data.error) {
-                        alert(data.error.message)
-                        console.error('Error:', data.error.message);
-                    } else {
-                        console.log("token: ", data.idToken);
-                        $("p[for=login].error-text").addClass('d-none')
-                        $(".content .input_").removeClass('error-input')
-                        console.log(data);
-                        localStorage.token = data.idToken
-                        window.location.href = 'index.html'
-                    }
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    let msg = jqXHR.responseJSON.error.message
-                    let errorMessage
-                    switch (msg) {
-                        case 'EMAIL_EXISTS': errorMessage = 'This email exist already.';
-                            break;
-                        case 'EMAIL_NOT_FOUND': errorMessage = 'This email dose not exist.';
-                            break;
-                        case 'INVALID_PASSWORD': errorMessage = 'This password dose not exist.';
-                            break;
-                        default: errorMessage = 'email or password dose not exist.'
-                    }
-                    $("p[for=login].error-text").removeClass('d-none').text(errorMessage)
-                    $(".content .input_").addClass('error-input')
-                    // alert(jqXHR.responseJSON.error.message);
-                    console.error('Request failed:', errorThrown);
+        $.ajax({
+            type: "POST",
+            url: "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyC9_Bvk9PVb0cwreWTlGP4k12g7MLU2y5E",
+            contentType: 'application/json',
+            dataType: "json",
+            data: JSON.stringify({
+                "email": email,
+                "password": pass,
+                "returnSecureToken": true
+            }),
+            success: function (data) {
+                console.log("token: ", data.idToken);
+                // Check for success or handle error
+                if (data.error) {
+                    alert(data.error.message)
+                    console.error('Error:', data.error.message);
+                } else {
+                    $("p[for=signup].error-text").addClass('d-none')
+                    $(".content .input_").removeClass('error-input')
+                    console.log(data);
+                    window.location.href = 'index.html'
                 }
-            });
-        } else {
-            $("p[for=login].error-text").removeClass('d-none').text('Please fill in your email or password')
-            $(".content .input_").addClass('error-input')
-        }
-
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                let msg = jqXHR.responseJSON.error.message
+                let errorMessage = "Can't Signup"
+                switch (msg) {
+                    case 'EMAIL_EXISTS': errorMessage = 'This email exist already.';
+                        break;
+                    case 'EMAIL_NOT_FOUND': errorMessage = 'This email dose not exist.';
+                        break;
+                    case 'INVALID_PASSWORD': errorMessage = 'This password dose not exist.';
+                        break;
+                    case 'WEAK_PASSWORD : Password should be at least 6 characters' : errorMessage = 'Password should be at least 6 characters'
+                        break;
+                }
+                $("p[for=signup].error-text").removeClass('d-none').text(errorMessage)
+                $(".content .input_").addClass('error-input')
+                // alert(jqXHR.responseJSON.error.message);
+                console.error('Request failed:', errorThrown);
+            }
+        });
         // window.location.href = 'index.html'
     }
 </script>

@@ -1,6 +1,11 @@
 let items, item_tmp, ListCart;
 
 $(function () {
+    // if(localStorage.token == undefined) {
+    //     window.location.href = 'login.html'
+    // } else {
+    //     window.location.href = 'index.html'
+    // }
     getListCart()
     $.ajax({
         type: "get",
