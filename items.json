@@ -1,0 +1,20 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "title": "Tyrannosaurus Rex",
+            "description": "The very first Tyrannosaurus fossils were discovered in 1902 by American Palaeontologist, Henry Fairfield Osborn.The very first Tyrannosaurus fossils were discovered in 1902 by American Palaeontologist, Henry Fairfield Osborn.The very first Tyrannosaurus fossils were discovered in 1902 by American Palaeontologist, Henry Fairfield Osborn.The very first Tyrannosaurus fossils were discovered in 1902 by American Palaeontologist, Henry Fairfield Osborn.",
+            "price": "1.32",
+            "image":"dino/dino-1.png",
+            "type":"Theropods Dinosaurs"
+        },
+        {
+            "id": 2,
+            "title": "xxtxxx",
+            "description": "yywyyyyy",
+            "price": "1.12",
+            "image":"dino/dino-1.png",
+            "type":"Theropods Dinosaurs"
+        }
+    ]
+}
